@@ -14,9 +14,6 @@
       line-height: 1.6;
       width: 100%;
       overflow-x: hidden;
-      p {
-          text-align: justify;
-      }
     }
 
     nav {
@@ -85,10 +82,19 @@
       margin-right: auto;
     }
 
-    p, ul {
+    p {
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      text-align: justify;
+    }
+
+    ul {
+      max-width: 800px;
+      margin: auto;
+      padding-left: 1.5em;
+      overflow-x: auto;
+      display: block;
     }
 
     ul li {
@@ -101,30 +107,42 @@
     }
 
     @media (max-width: 800px) {
-  p, ul, h2, li {
-    padding-left: 22px;
-    padding-right: 22px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+      p, h2 {
+        padding-left: 16px;
+        padding-right: 16px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
 
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
+      ul {
+        white-space: nowrap;
+        padding-left: 16px;
+        box-sizing: border-box;
+      }
 
-  .header-text {
-    width: 100%;
-    padding: 0 16px;
-    box-sizing: border-box;
-  }
+      ul li {
+        display: list-item;
+        white-space: normal;
+        padding-left: 0.5em;
+      }
 
-  .header img {
-    width: 120px;
-  }
-}
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .header-text {
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+      }
+
+      .header img {
+        width: 120px;
+      }
+    }
   </style>
 </head>
 <body>
