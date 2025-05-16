@@ -12,8 +12,16 @@
       background-color: #f9f9f9;
       color: #222;
       line-height: 1.6;
-      width: 100%;
-      overflow-x: hidden;
+      overflow-x: auto;     /* Autorise le scroll horizontal */
+      white-space: nowrap;  /* Évite que les blocs se cassent à la ligne */
+    }
+
+    .page-scroll-horizontal {
+      width: 1000px;        /* Largeur fixe plus grande que l’écran mobile */
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: normal;  /* Remet le retour à la ligne dans le contenu */
+      margin: 0 auto;
     }
 
     nav {
@@ -93,8 +101,6 @@
       max-width: 800px;
       margin: auto;
       padding-left: 1.5em;
-      overflow-x: auto;
-      display: block;
     }
 
     ul li {
@@ -105,115 +111,77 @@
       overflow-x: auto;
       width: 100%;
     }
-
-    @media (max-width: 800px) {
-      p, h2 {
-        padding-left: 16px;
-        padding-right: 16px;
-        max-width: 100%;
-        box-sizing: border-box;
-      }
-
-      ul {
-        white-space: nowrap;
-        padding-left: 16px;
-        box-sizing: border-box;
-      }
-
-      ul li {
-        display: list-item;
-        white-space: normal;
-        padding-left: 0.5em;
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-      }
-
-      .header-text {
-        width: 100%;
-        padding: 0 16px;
-        box-sizing: border-box;
-      }
-
-      .header img {
-        width: 120px;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#presentation">Présentation</a>
-    <a href="#recherche">Recherche</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="page-scroll-horizontal">
+    <nav>
+      <a href="#presentation">Présentation</a>
+      <a href="#recherche">Recherche</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <div class="header">
-    <img src="photo.jpg" alt="Photo d'Alandra Zakkour" loading="lazy" />
-    <div class="header-text">
-      <h1>Alandra Zakkour</h1>
-      <p><strong>Docteure en Mathématiques et leurs interactions</strong></p>
-      <p>Université de Poitiers</p>
-      <p>Laboratoire de Mathématiques et Applications (LMA, Poitiers)</p>
-      <p>Site du Futuroscope – Téléport 2, 11 Boulevard Marie et Pierre Curie, Bâtiment H3 – TSA 61125, Bureau : 029</p>
+    <div class="header">
+      <img src="photo.jpg" alt="Photo d'Alandra Zakkour" loading="lazy" />
+      <div class="header-text">
+        <h1>Alandra Zakkour</h1>
+        <p><strong>Docteure en Mathématiques et leurs interactions</strong></p>
+        <p>Université de Poitiers</p>
+        <p>Laboratoire de Mathématiques et Applications (LMA, Poitiers)</p>
+        <p>Site du Futuroscope – Téléport 2, 11 Boulevard Marie et Pierre Curie, Bâtiment H3 – TSA 61125, Bureau : 029</p>
+      </div>
     </div>
-  </div>
 
-  <h2 id="presentation">Présentation</h2>
-  <p>
-    Je suis actuellement Attachée Temporaire d’Enseignement et de Recherche (ATER) à l’Université de Poitiers. 
-    J’ai soutenu ma thèse de doctorat en décembre 2024, dans le domaine des mathématiques appliquées, avec une spécialisation en analyse statistique.
-  </p>
-  <p>
-    Ma thèse, intitulée <em>« Classification à partir d’une classe de q-distributions de probabilités »</em>, porte sur l’analyse des processus cognitifs impliqués dans la production écrite, à partir de l’étude des pauses dactylographiées et des temps de réaction. 
-    J’y mobilise des outils tels que les modèles à effets mixtes, l’inférence bayésienne, la distribution Ex-Gaussienne, ainsi que des méthodes de traitement des données manquantes.
-  </p>
-  <p>
-    Une contribution originale de mes travaux réside dans l’introduction de la distribution q-Ex-Gaussienne, une extension de la distribution Ex-Gaussienne inspirée des fondements du calcul quantique. 
-    Ce développement ouvre des perspectives nouvelles pour l’estimation statistique dans des contextes cognitifs complexes.
-  </p>
-  <p>
-    Mes recherches se situent à l’interface entre modélisation théorique et applications empiriques en psycholinguistique, avec un intérêt particulier pour les méthodes statistiques robustes et les approches bayésiennes sur petits échantillons.
-  </p>
+    <h2 id="presentation">Présentation</h2>
+    <p>
+      Je suis actuellement Attachée Temporaire d’Enseignement et de Recherche (ATER) à l’Université de Poitiers. 
+      J’ai soutenu ma thèse de doctorat en décembre 2024, dans le domaine des mathématiques appliquées, avec une spécialisation en analyse statistique.
+    </p>
+    <p>
+      Ma thèse, intitulée <em>« Classification à partir d’une classe de q-distributions de probabilités »</em>, porte sur l’analyse des processus cognitifs impliqués dans la production écrite, à partir de l’étude des pauses dactylographiées et des temps de réaction. 
+      J’y mobilise des outils tels que les modèles à effets mixtes, l’inférence bayésienne, la distribution Ex-Gaussienne, ainsi que des méthodes de traitement des données manquantes.
+    </p>
+    <p>
+      Une contribution originale de mes travaux réside dans l’introduction de la distribution q-Ex-Gaussienne, une extension de la distribution Ex-Gaussienne inspirée des fondements du calcul quantique. 
+      Ce développement ouvre des perspectives nouvelles pour l’estimation statistique dans des contextes cognitifs complexes.
+    </p>
+    <p>
+      Mes recherches se situent à l’interface entre modélisation théorique et applications empiriques en psycholinguistique, avec un intérêt particulier pour les méthodes statistiques robustes et les approches bayésiennes sur petits échantillons.
+    </p>
 
-  <h2 id="recherche">Thèmes de recherche</h2>
-  <ul>
-    <li>Analyse statistique des données expérimentales</li>
-    <li>Algorithmes stochastiques pour l'estimation statistique</li>
-    <li>Gestion des données manquantes</li>
-    <li>Inférence bayésienne et estimation des paramètres</li>
-    <li>Modèles à effets mixtes</li>
-    <li>Distribution Ex-Gaussienne et q-Ex-Gaussienne</li>
-    <li>Temps de réaction et pauses dactylographiées</li>
-  </ul>
+    <h2 id="recherche">Thèmes de recherche</h2>
+    <ul>
+      <li>Analyse statistique des données expérimentales</li>
+      <li>Algorithmes stochastiques pour l'estimation statistique</li>
+      <li>Gestion des données manquantes</li>
+      <li>Inférence bayésienne et estimation des paramètres</li>
+      <li>Modèles à effets mixtes</li>
+      <li>Distribution Ex-Gaussienne et q-Ex-Gaussienne</li>
+      <li>Temps de réaction et pauses dactylographiées</li>
+    </ul>
 
-  <h2 id="publications">Publications</h2>
-  <ul>
-    <li>Zakkour, A., Perret, C., & Slaoui, Y. (2023). Stochastic Expectation Maximization Algorithm for Linear Mixed-Effects Model with Interactions in the Presence of Incomplete Data. <em>Entropy</em>, 25(3), 473. <a href="https://doi.org/10.3390/e25030473">doi</a></li>
-    <li>Slaoui, Y. et al. (2023). ExGaussEstim: R Package for Quantile Maximization Likelihood Estimation and Bayesian Ex-Gaussian Estimation. <a href="https://CRAN.R-project.org/package=ExGaussEstim">version 0.1.2</a></li>
-  </ul>
+    <h2 id="publications">Publications</h2>
+    <ul>
+      <li>Zakkour, A., Perret, C., & Slaoui, Y. (2023). Stochastic Expectation Maximization Algorithm for Linear Mixed-Effects Model with Interactions in the Presence of Incomplete Data. <em>Entropy</em>, 25(3), 473. <a href="https://doi.org/10.3390/e25030473">doi</a></li>
+      <li>Slaoui, Y. et al. (2023). ExGaussEstim: R Package for Quantile Maximization Likelihood Estimation and Bayesian Ex-Gaussian Estimation. <a href="https://CRAN.R-project.org/package=ExGaussEstim">version 0.1.2</a></li>
+    </ul>
 
-  <h2>Programmation & outils</h2>
-  <ul>
-    <li><strong>Langages</strong> : R, SAS, Python, SPSS, Maple, C++</li>
-    <li><strong>Outils</strong> : LaTeX, HTML, Microsoft Office</li>
-  </ul>
+    <h2>Programmation & outils</h2>
+    <ul>
+      <li><strong>Langages</strong> : R, SAS, Python, SPSS, Maple, C++</li>
+      <li><strong>Outils</strong> : LaTeX, HTML, Microsoft Office</li>
+    </ul>
 
-  <h2 id="contact">Contact</h2>
-  <p>
-    Vous pouvez me contacter à l’adresse professionnelle suivante : 
-    <a href="mailto:alandra.zakkour@univ-poitiers.fr">alandra.zakkour@univ-poitiers.fr</a>, 
-    ou à titre personnel à <a href="mailto:alandrazakkour3@gmail.com">alandrazakkour3@gmail.com</a>.
-  </p>
+    <h2 id="contact">Contact</h2>
+    <p>
+      Vous pouvez me contacter à l’adresse professionnelle suivante : 
+      <a href="mailto:alandra.zakkour@univ-poitiers.fr">alandra.zakkour@univ-poitiers.fr</a>, 
+      ou à titre personnel à <a href="mailto:alandrazakkour3@gmail.com">alandrazakkour3@gmail.com</a>.
+    </p>
 
-  <h2>Liens utiles</h2>
-  <div class="scrollable-section">
+    <h2>Liens utiles</h2>
     <ul>
       <li><a href="CV_Alandra_Zakkour.pdf" target="_blank">CV complet</a></li>
       <li><a href="https://hal.science/tel-05039938">Manuscrit de thèse</a></li>
