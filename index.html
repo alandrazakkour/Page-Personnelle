@@ -12,16 +12,7 @@
       background-color: #f9f9f9;
       color: #222;
       line-height: 1.6;
-      overflow-x: auto;     /* Autorise le scroll horizontal */
-      white-space: nowrap;  /* Évite que les blocs se cassent à la ligne */
-    }
-
-    .page-scroll-horizontal {
-      width: 1000px;        /* Largeur fixe plus grande que l’écran mobile */
-      overflow-x: auto;
-      overflow-y: hidden;
-      white-space: normal;  /* Remet le retour à la ligne dans le contenu */
-      margin: 0 auto;
+      overflow-x: auto;  /* Autorise scroll horizontal */
     }
 
     nav {
@@ -31,6 +22,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      width: 100%;
     }
 
     nav a {
@@ -43,9 +35,17 @@
       text-decoration: underline;
     }
 
+    .page-scroll-horizontal {
+      width: 1000px; /* contenu plus large que l'écran */
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: normal;
+      margin: 0 auto;
+    }
+
     .header {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       gap: 20px;
       max-width: 800px;
       margin: 40px auto;
@@ -57,11 +57,11 @@
 
     .header img {
       width: 180px;
-      height: auto;
+      height: 250px%;
       border-radius: 8px;
       object-fit: cover;
     }
-  
+
     .header-text {
       flex: 1;
     }
@@ -107,21 +107,56 @@
       margin-bottom: 8px;
     }
 
-    .scrollable-section {
-      overflow-x: auto;
-      width: 100%;
+    @media (max-width: 800px) {
+      .header {
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+        gap: 16px;
+      }
+
+      .header-text {
+        width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+      }
+
+      .header img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+        margin-bottom: 0;
+      }
+
+      p, h2 {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+      }
+
+      ul {
+        padding-left: 16px;
+        box-sizing: border-box;
+      }
+
+      ul li {
+        padding-left: 0.5em;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- ✅ Navigation pleine largeur -->
+  <nav>
+    <a href="#presentation">Présentation</a>
+    <a href="#recherche">Recherche</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ✅ Contenu avec scroll horizontal -->
   <div class="page-scroll-horizontal">
-    <nav>
-      <a href="#presentation">Présentation</a>
-      <a href="#recherche">Recherche</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
 
     <div class="header">
       <img src="photo.jpg" alt="Photo d'Alandra Zakkour" loading="lazy" />
@@ -136,21 +171,16 @@
 
     <h2 id="presentation">Présentation</h2>
     <p>
-      Je suis actuellement Attachée Temporaire d’Enseignement et de Recherche (ATER) à l’Université de Poitiers. 
-      J’ai soutenu ma thèse de doctorat en décembre 2024, dans le domaine des mathématiques appliquées, avec une spécialisation en analyse statistique.
+     Je suis actuellement Attachée Temporaire d’Enseignement et de Recherche (ATER) à l’Université de Poitiers. J’ai soutenu ma thèse en mathématiques     
+     appliquées, avec une spécialisation en analyse statistique, en 2024. Cette recherche porte sur l’étude des processus cognitifs liés à la production   
+     écrite, à partir des temps de réaction et des pauses dactylographiées.
     </p>
     <p>
-      Ma thèse, intitulée «Classification à partir d’une classe de q-distributions de probabilités», porte sur l’analyse des processus cognitifs impliqués dans la production écrite, à partir de l’étude des pauses dactylographiées et des temps de réaction. 
-      J’y mobilise des outils tels que les modèles à effets mixtes, l’inférence bayésienne, la distribution Ex-Gaussienne, ainsi que des méthodes de traitement des données manquantes.
+     Mon travail mobilise des outils statistiques avancés, notamment les modèles à effets mixtes, les modèles de mélange, l’inférence bayésienne, et la distribution Ex-Gaussienne. Un enjeu central concerne le traitement des données manquantes, abordé via l’algorithme SEM, l’imputation multiple et l’augmentation des données.
     </p>
     <p>
-      Une contribution originale de mes travaux réside dans l’introduction de la distribution q-Ex-Gaussienne, une extension de la distribution Ex-Gaussienne inspirée des fondements du calcul quantique. 
-      Ce développement ouvre des perspectives nouvelles pour l’estimation statistique dans des contextes cognitifs complexes.
+     Ma contribution originale réside dans l’introduction de la distribution q-Ex-Gaussienne, inspirée du q-calcul, qui ouvre de nouvelles perspectives pour l’analyse des données cognitives dans des contextes complexes à petits échantillons.
     </p>
-    <p>
-      Mes recherches se situent à l’interface entre modélisation théorique et applications empiriques en psycholinguistique, avec un intérêt particulier pour les méthodes statistiques robustes et les approches bayésiennes sur petits échantillons.
-    </p>
-
     <h2 id="recherche">Thèmes de recherche</h2>
     <ul>
       <li>Analyse statistique des données expérimentales</li>
@@ -191,7 +221,7 @@
       <li><a href="https://cv.archives-ouvertes.fr/alandra-zakkour">Profil HAL</a></li>
       <li><a href="https://orcid.org/0009-0005-7657-8479">ORCID</a></li>
     </ul>
-  </div>
 
+  </div>
 </body>
 </html>
