@@ -12,7 +12,7 @@
       background-color: #f9f9f9;
       color: #222;
       line-height: 1.6;
-      overflow-x: auto;  /* Autorise scroll horizontal */
+      overflow-x: auto;
     }
 
     nav {
@@ -36,36 +36,42 @@
     }
 
     .page-scroll-horizontal {
-  width: 100%;
-  overflow-x: auto;
-  margin: 0 auto;
-}
-
+      width: 100%;
+      overflow-x: auto;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+      box-sizing: border-box;
+    }
 
     .header {
       display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
+      flex-direction: row;
+      align-items: center;
       gap: 20px;
+      width: 100%;
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
       background-color: white;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
+      box-sizing: border-box;
     }
 
     .header img {
-  width: 180px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  max-width: 100%;
-}
-
+      width: 140px;
+      max-width: 30vw;
+      min-width: 100px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
 
     .header-text {
       flex: 1;
+      min-width: 0;
     }
 
     .header-text h1 {
@@ -92,16 +98,14 @@
       margin-right: auto;
     }
 
-    p {
+    p, ul, li {
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
-      text-align: justify;
+      text-align: left;
     }
 
     ul {
-      max-width: 800px;
-      margin: auto;
       padding-left: 1.5em;
     }
 
@@ -110,44 +114,35 @@
     }
 
     @media (max-width: 800px) {
-  .header {
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+      .header {
+        padding: 16px;
+        gap: 16px;
+      }
 
-  .header img {
-    width: 120px;
-    height: auto;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
+      .header img {
+        width: 120px;
+        max-width: 30vw;
+      }
 
-  .header-text {
-    flex: 1;
-    padding: 0;
-    font-size: 0.95em;
-  }
+      .header-text {
+        font-size: 0.95em;
+      }
 
-  p, h2 {
-    padding-left: 16px;
-    padding-right: 16px;
-    box-sizing: border-box;
-  }
+      p, h2, ul {
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+      }
 
-  ul {
-    padding-left: 16px;
-  }
-}
-
+      .page-scroll-horizontal {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Navigation pleine largeur -->
   <nav>
     <a href="#presentation">Présentation</a>
     <a href="#recherche">Recherche</a>
@@ -155,7 +150,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ✅ Contenu avec scroll horizontal -->
   <div class="page-scroll-horizontal">
 
     <div class="header">
@@ -181,6 +175,7 @@
     <p>
      Ma contribution originale réside dans l’introduction de la distribution q-Ex-Gaussienne, inspirée du q-calcul, qui ouvre de nouvelles perspectives pour l’analyse des données cognitives dans des contextes complexes à petits échantillons.
     </p>
+
     <h2 id="recherche">Thèmes de recherche</h2>
     <ul>
       <li>Analyse statistique des données expérimentales</li>
