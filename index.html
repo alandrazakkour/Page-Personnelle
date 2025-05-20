@@ -9,6 +9,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -16,7 +20,6 @@
       background-color: #f9f9f9;
       color: #222;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     nav {
@@ -39,12 +42,10 @@
       text-decoration: underline;
     }
 
-    .page-scroll-horizontal {
-      width: 100%;
-      overflow-x: hidden;
+    .container {
+      max-width: 800px;
       margin: 0 auto;
-      padding-left: 16px;
-      padding-right: 16px;
+      padding: 20px;
     }
 
     .header {
@@ -52,12 +53,11 @@
       flex-direction: row;
       align-items: center;
       gap: 20px;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
+      margin-bottom: 40px;
       background-color: white;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
       border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .header img {
@@ -81,28 +81,18 @@
       font-weight: 700;
     }
 
-    .header-text p {
-      margin: 4px 0;
-    }
-
-    .header-text p strong {
-      font-weight: 700;
-    }
-
     .section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 32px 0;
+      margin-bottom: 40px;
     }
 
     h2 {
       color: #003366;
       border-bottom: 2px solid #003366;
       padding-bottom: 4px;
-      margin-top: 0;
+      margin-bottom: 20px;
     }
 
-    p, ul {
+    p {
       text-align: justify;
     }
 
@@ -115,47 +105,33 @@
       margin-bottom: 8px;
     }
 
-    a.button-link {
-      display: inline-block;
+    footer {
       background-color: #003366;
       color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin: 4px 0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
     }
 
-    a.button-link:hover {
-      background-color: #005599;
+    footer a {
+      color: #eee;
+      text-decoration: underline;
     }
 
     @media (max-width: 800px) {
-      .header {
-        padding: 16px;
-        gap: 16px;
+      nav a {
+        font-size: 0.85em;
+        margin-right: 10px;
       }
 
-      .header img {
-        width: 120px;
-        max-width: 30vw;
-      }
-
-      .header-text {
-        font-size: 0.95em;
-      }
-    }
-
-    @media (max-width: 600px) {
       .header {
         flex-direction: column;
-        align-items: center;
         text-align: center;
       }
 
       .header img {
-        width: 120px;
-        max-width: 100%;
         margin-bottom: 10px;
+        max-width: 100%;
       }
 
       .header-text {
@@ -165,6 +141,7 @@
   </style>
 </head>
 <body>
+
   <nav>
     <a href="#presentation">Présentation</a>
     <a href="#recherche">Recherche</a>
@@ -172,9 +149,10 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="page-scroll-horizontal">
+  <div class="container">
+
     <div class="header">
-      <img src="photo.jpg" alt="Photo d'Alandra Zakkour" loading="lazy" />
+      <img src="photo.jpg" alt="Portrait d'Alandra Zakkour" loading="lazy" />
       <div class="header-text">
         <h1>Alandra Zakkour</h1>
         <p><strong>Docteure en Mathématiques et leurs interactions</strong></p>
@@ -186,9 +164,17 @@
 
     <div class="section" id="presentation">
       <h2>Présentation</h2>
-      <p>Je suis actuellement Attachée Temporaire d’Enseignement et de Recherche (ATER) à l’Université de Poitiers. J’ai soutenu ma thèse en mathématiques appliquées, avec une spécialisation en analyse statistique, en 2024. Cette recherche porte sur l’étude des processus cognitifs liés à la production écrite, à partir des temps de réaction et des pauses dactylographiées. </p>
-      <p>Mon travail mobilise des outils statistiques avancés, notamment les modèles à effets mixtes, les modèles de mélange, l’inférence bayésienne, et la distribution Ex-Gaussienne. Un enjeu central concerne le traitement des données manquantes, abordé via l’algorithme SEM, l’imputation multiple et l’augmentation des données. </p>
-      <p>Ma contribution originale réside dans l’introduction de la distribution q-Ex-Gaussienne, inspirée du q-calcul, qui ouvre de nouvelles perspectives pour l’analyse des données cognitives dans des contextes complexes à petits échantillons. </p>
+      <p>
+        Je suis actuellement Attachée Temporaire d’Enseignement et de Recherche (ATER) à l’Université de Poitiers. J’ai soutenu ma thèse en mathématiques
+        appliquées, avec une spécialisation en analyse statistique, en 2024. Cette recherche porte sur l’étude des processus cognitifs liés à la production
+        écrite, à partir des temps de réaction et des pauses dactylographiées.
+      </p>
+      <p>
+        Mon travail mobilise des outils statistiques avancés, notamment les modèles à effets mixtes, les modèles de mélange, l’inférence bayésienne, et la distribution Ex-Gaussienne. Un enjeu central concerne le traitement des données manquantes, abordé via l’algorithme SEM, l’imputation multiple et l’augmentation des données.
+      </p>
+      <p>
+        Ma contribution originale réside dans l’introduction de la distribution q-Ex-Gaussienne, inspirée du q-calcul, qui ouvre de nouvelles perspectives pour l’analyse des données cognitives dans des contextes complexes à petits échantillons.
+      </p>
     </div>
 
     <div class="section" id="recherche">
@@ -207,7 +193,7 @@
     <div class="section" id="publications">
       <h2>Publications</h2>
       <ul>
-        <li>Zakkour, A., Perret, C., & Slaoui, Y. (2023). Stochastic Expectation Maximization Algorithm for Linear Mixed-Effects Model with Interactions in the Presence of Incomplete Data. Entropy, 25(3), 473. <a href="https://doi.org/10.3390/e25030473">doi</a></li>
+        <li>Zakkour, A., Perret, C., & Slaoui, Y. (2023). Stochastic Expectation Maximization Algorithm for Linear Mixed-Effects Model with Interactions in the Presence of Incomplete Data. <em>Entropy</em>, 25(3), 473. <a href="https://doi.org/10.3390/e25030473">doi</a></li>
         <li>Slaoui, Y. et al. (2023). ExGaussEstim: R Package for Quantile Maximization Likelihood Estimation and Bayesian Ex-Gaussian Estimation. <a href="https://CRAN.R-project.org/package=ExGaussEstim">version 0.1.2</a></li>
       </ul>
     </div>
@@ -222,7 +208,8 @@
 
     <div class="section" id="contact">
       <h2>Contact</h2>
-      <p>Vous pouvez me contacter à l’adresse professionnelle suivante :
+      <p>
+        Vous pouvez me contacter à l’adresse professionnelle suivante :
         <a href="mailto:alandra.zakkour@univ-poitiers.fr">alandra.zakkour@univ-poitiers.fr</a>,
         ou à titre personnel à <a href="mailto:alandrazakkour3@gmail.com">alandrazakkour3@gmail.com</a>.
       </p>
@@ -231,15 +218,21 @@
     <div class="section">
       <h2>Liens utiles</h2>
       <ul>
-        <li><a href="CV_Alandra_Zakkour.pdf" class="button-link" target="_blank">CV complet</a></li>
-        <li><a href="https://hal.science/tel-05039938" class="button-link">Manuscrit de thèse</a></li>
-        <li><a href="https://theses.fr/s342064" class="button-link">Thèse.fr</a></li>
-        <li><a href="https://www.linkedin.com/in/alandra-zakkour-47b371195/" class="button-link">Profil LinkedIn</a></li>
-        <li><a href="https://www.researchgate.net/profile/Alandra-Zakkour" class="button-link">Profil ResearchGate</a></li>
-        <li><a href="https://cv.archives-ouvertes.fr/alandra-zakkour" class="button-link">Profil HAL</a></li>
-        <li><a href="https://orcid.org/0009-0005-7657-8479" class="button-link">ORCID</a></li>
+        <li><a href="CV_Alandra_Zakkour.pdf" target="_blank">CV complet</a></li>
+        <li><a href="https://hal.science/tel-05039938">Manuscrit de thèse</a></li>
+        <li><a href="https://theses.fr/s342064">Thèse.fr</a></li>
+        <li><a href="https://www.linkedin.com/in/alandra-zakkour-47b371195/">Profil LinkedIn</a></li>
+        <li><a href="https://www.researchgate.net/profile/Alandra-Zakkour">Profil ResearchGate</a></li>
+        <li><a href="https://cv.archives-ouvertes.fr/alandra-zakkour">Profil HAL</a></li>
+        <li><a href="https://orcid.org/0009-0005-7657-8479">ORCID</a></li>
       </ul>
     </div>
+
   </div>
+
+  <footer>
+    &copy; 2025 Alandra Zakkour – Tous droits réservés. | <a href="CV_Alandra_Zakkour.pdf" target="_blank">Télécharger le CV</a>
+  </footer>
+
 </body>
 </html>
